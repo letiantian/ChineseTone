@@ -1,6 +1,6 @@
-# Hanzi2Pinyin （汉字转拼音）
+# ChineseTone （汉字转拼音）
 
-Hanzi2Pinyin是[jpinyin](https://github.com/stuxuhai/jpinyin)的Python实现（略有改动），主要功能是将汉字转为拼音，兼容Python2、Python3，支持多音字。
+ChineseTone是[jpinyin](https://github.com/stuxuhai/jpinyin)的Python实现（略有改动），主要功能是将汉字转为拼音，兼容Python2、Python3，支持多音字。
 
 
 
@@ -23,7 +23,7 @@ $ sudo python setup.py install
 
 
 ```python
-from Hanzi2Pinyin import *
+from ChineseTone import *
 
 print PinyinHelper.convertToPinyinFromSentence('了解了')
 # 输出：[u'li\u01ceo', u'ji\u011b', u'le']
@@ -159,7 +159,7 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 ```
 
 ## 词库
-词库位于`Hanzi2Pinyin/data`下，可以根据需要在添加内容。 
+词库位于`ChineseTone/data`下，可以根据需要在添加内容。 
 
 词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)。 
 
