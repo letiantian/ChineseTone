@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * 将 https://github.com/overtrue/pinyin 中的词库转换为phrase.db
+ */
+
 include "./src/Pinyin/Pinyin.php";
 
 use Overtrue\Pinyin\Pinyin;
