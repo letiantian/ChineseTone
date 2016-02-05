@@ -17,7 +17,7 @@ $ sudo python setup.py install
 ```
 
 
-## 汉字转拼音
+## 使用
 
 #### 基本使用
 
@@ -104,6 +104,7 @@ print PinyinHelper.convertToPinyinFromChar('了', PinyinFormat.WITH_TONE_NUMBER)
 print PinyinHelper.convertToPinyinFromChar('了', PinyinFormat.WITHOUT_TONE)
 # 输出：[u'le', u'liao']
 
+## 若不是单个汉字，返回原值组成的长度为1的列表
 print PinyinHelper.convertToPinyinFromChar('了解')
 # 输出：[u'\u4e86\u89e3']  # 即“了解”
 
@@ -157,6 +158,9 @@ print ChineseHelper.convertToTraditionalChinese('hi，你好，我来到了北�
 print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京天安門')
 # 输出：hi，你好，我来到了北京天安门
 ```
+
+## 自定义词库
+修改`Hanzi2Pinyin/data`下的文件， 然后__重新安装__。
 
 ## 相关项目
 
