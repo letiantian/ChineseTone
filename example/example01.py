@@ -41,4 +41,4 @@ print(','.join(PinyinHelper.convertToPinyinFromSentence('了解了！abc03127', 
 
 print(20*'*')
 
-print(PinyinResource.PHRASE_MAX_LEN)
+print(PinyinResource.PHRASE_MAX_LEN)  # 词库中短语最长长度
