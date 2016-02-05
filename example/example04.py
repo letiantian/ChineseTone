@@ -2,7 +2,7 @@
 
 from __future__ import (print_function, unicode_literals)
 
-from Hanzi2Pinyin import *
+from ChineseTone import *
 
 print( ChineseHelper.isChinese('n') )
 print( ChineseHelper.isChinese('你好') )

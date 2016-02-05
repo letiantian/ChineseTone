@@ -3,7 +3,7 @@
 from __future__ import (print_function, unicode_literals)
 
 import jieba
-from Hanzi2Pinyin import *
+from ChineseTone import *
 
 def cut(s):
     return jieba.cut(s, cut_all=False)
