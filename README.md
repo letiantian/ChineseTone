@@ -148,8 +148,7 @@ print ChineseHelper.isChinese('hi，小王')
 # 输出：False
 ```
 
-#### 简/繁转换
-实现得比较简单。
+#### 简单的简/繁转换
 
 ```python
 print ChineseHelper.convertToTraditionalChinese('hi，你好，我来到了北京天安门')
@@ -159,14 +158,25 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 # 输出：hi，你好，我来到了北京天安门
 ```
 
-## 自定义词库
-修改`Hanzi2Pinyin/data`下的文件， 然后__重新安装__。
+## 词库
+词库位于`Hanzi2Pinyin/data`下，可以根据需要在添加内容。 
+
+词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)。 
+
+更新词库后需要重新安装：
+
+* 如果有`build`目录，则删除；
+* [安装](#安装)。
+
+
+`tools`目录下的`convert.php`用于将[pinyin](https://github.com/overtrue/pinyin)中的词库转换为`phrase.db`。
 
 ## 相关项目
 
 * jpinyin: https://github.com/stuxuhai/jpinyin
 * pinyin: https://github.com/hotoo/pinyin
 * pypinyin: https://github.com/mozillazg/python-pinyin
+* pinyin: https://github.com/overtrue/pinyin
 
 
 

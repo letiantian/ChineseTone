@@ -2,7 +2,18 @@
 
 from __future__ import (print_function, unicode_literals)
 
-__author__ = 'letian'
+__all__ = [
+    '__author__',
+    '__version__',
+    'PinyinFormat',
+    'PinyinException',
+    'PinyinResource',
+    'PinyinHelper',
+    'ChineseHelper'
+]
+
+__author__   = 'letian'
+__version__  = '0.1.0'
 
 import os
 import sys
@@ -70,15 +81,20 @@ class PinyinResource(object):
         return resource
 
     @staticmethod
-    def getMutilPinyinResource():
+    def getWordPinyinResource():
         resource = {}
-        for line in open(os.path.join(CURRENT_DIR, 'data', 'mutil_pinyin.db')):
-            line = as_text(line.strip())
-            if '=' not in line:
-                continue
-            hanzi, pinyins  = line.split('=')
-            PinyinResource.PHRASE_MAX_LEN = max(PinyinResource.PHRASE_MAX_LEN, len(hanzi))
-            resource[hanzi] = pinyins.split(',')
+        wordFiles = ['mutil_pinyin.db', 'phrase.db']
+        wordFiles = [os.path.join(CURRENT_DIR, 'data', fname) for fname in wordFiles]
+
+        for fpath in wordFiles:
+            for line in open(fpath):
+                line = as_text(line.strip())
+                if '=' not in line:
+                    continue
+                word, pinyins  = line.split('=')
+                PinyinResource.PHRASE_MAX_LEN = max(PinyinResource.PHRASE_MAX_LEN, len(word))
+                resource[word] = pinyins.split(',')
+
         return resource
 
     @staticmethod
@@ -108,9 +124,8 @@ class PinyinHelper(object):
     initialized  = False
 
     PINYIN_TABLE = None
-    MUTIL_PINYIN_TABLE = None
-    PINYIN_SEPARATOR = ","
-    CHINESE_LING = '〇'
+    WORD_PINYIN_TABLE = None
+
     ALL_UNMARKED_VOWEL = "aeiouv"
     ALL_MARKED_VOWEL = "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ"
 
@@ -174,7 +189,7 @@ class PinyinHelper(object):
     def loadTable():
         if not PinyinHelper.initialized:
             PinyinHelper.PINYIN_TABLE = PinyinResource.getPinyinResource()
-            PinyinHelper.MUTIL_PINYIN_TABLE = PinyinResource.getMutilPinyinResource()
+            PinyinHelper.WORD_PINYIN_TABLE = PinyinResource.getWordPinyinResource()
             PinyinHelper.initialized = True
 
     @staticmethod
@@ -242,8 +257,8 @@ class PinyinHelper(object):
                 isWord = False
                 for step in xrange(phrase_max_len, 1, -1):
                     temp_word = s[idx: idx+step]
-                    if temp_word in PinyinHelper.MUTIL_PINYIN_TABLE:
-                        result += PinyinHelper.MUTIL_PINYIN_TABLE[temp_word]
+                    if temp_word in PinyinHelper.WORD_PINYIN_TABLE:
+                        result += PinyinHelper.WORD_PINYIN_TABLE[temp_word]
                         idx += step
                         isWord = True
                         break
@@ -339,3 +354,6 @@ class ChineseHelper(object):
             else:
                 result += c
         return result
+
+
+
