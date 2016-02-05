@@ -1,5 +1,11 @@
 # coding: utf-8
 
+"""
+@author:   letian
+@homepage: http://www.letiantian.me
+@github:   https://github.com/someus/
+"""
+
 from __future__ import (print_function, unicode_literals)
 
 import os
