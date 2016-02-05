@@ -16,6 +16,16 @@ $ python setup.py install --user
 $ sudo python setup.py install
 ```
 
+方式3：
+```
+$ pip install ChineseTone --user
+```
+
+方式4：
+```
+$ sudo pip install ChineseTone
+```
+
 
 ## 使用
 
