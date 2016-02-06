@@ -8,7 +8,7 @@ Please go to https://github.com/someus/ChineseTone for more info.
 
 setup(
     name='ChineseTone',
-    version='0.1.0',
+    version='0.1.1',
     description='将汉字转换为拼音',
     long_description=LONGDOC,
     author='Letian Sun',

@@ -1,9 +1,4 @@
 <?php
-
-/**
- * 将 https://github.com/overtrue/pinyin 中的词库转换为phrase.db
- */
-
 include "./src/Pinyin/Pinyin.php";
 
 use Overtrue\Pinyin\Pinyin;
@@ -19,8 +14,23 @@ $result = '';
 
 foreach ($dict as $word => $pinyin) {
     if ( mb_strlen($word, 'utf-8') > 1 && 3 == strlen($word) / mb_strlen($word, 'utf-8') ) {
-        $pinyin = str_replace(' ', ',', Pinyin::trans($word)); 
-        $result = $result . $word . '=' . $pinyin . "\n";
+
+        // 有些短语是`一分耕耘，一分收获`这种类型，处理一下
+        if (strpos($word, '，') !== false) {
+            $pinyin = Pinyin::trans($word);
+            $words = explode('，', $word);
+            $pinyins = explode(',', $pinyin);
+            for($i=0; $i<count($words); ++$i) {
+                $w = $words[$i];
+                $p = trim($pinyins[$i]);
+                $p = str_replace(' ', ',', $p);
+                $result = $result . $w . '=' . $p . "\n";
+            }
+
+        } else {
+            $pinyin = str_replace(' ', ',', Pinyin::trans($word)); 
+            $result = $result . $word . '=' . $pinyin . "\n";
+        }
     }
 }  
 
