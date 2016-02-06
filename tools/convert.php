@@ -3,7 +3,7 @@ include "./src/Pinyin/Pinyin.php";
 
 use Overtrue\Pinyin\Pinyin;
 
-$filepath = dirname(__DIR__).'/pinyin/src/data/dict.php';
+$filepath = dirname(__DIR__).'/dict.php';
 
 // echo __DIR__ . "\n";
 // echo $filepath . "\n";
