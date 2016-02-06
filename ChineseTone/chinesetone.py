@@ -145,10 +145,14 @@ class PinyinHelper(object):
         'ú': 'u',
         'ǔ': 'u',
         'ù': 'u',
+        'ü': 'v',
         'ǖ': 'v',
         'ǘ': 'v',
         'ǚ': 'v',
         'ǜ': 'v',
+        'ń': 'n',
+        'ň': 'n',
+        '': 'm',
     }
 
     MARKED_VOWEL_TO_TONE_NUMBER = {
@@ -176,6 +180,8 @@ class PinyinHelper(object):
         'ǘ': '2',
         'ǚ': '3',
         'ǜ': '4',
+        'ń': '2',
+        'ň': '3',
     }
 
     SHENGMU = set(['b','p','m','f','d','t','n','l','g','k','h','j','q','x','zh','ch','sh','r','z','c','s',])
