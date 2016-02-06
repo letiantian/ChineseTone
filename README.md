@@ -176,15 +176,13 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 ## 词库
 词库位于`ChineseTone/data`下，可以根据需要在添加内容。 
 
-词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)。 
+词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)、[pinyin](https://github.com/hotoo/pinyin)。 
 
 更新词库后需要重新安装：
 
 * 如果有`build`目录，则删除；
 * [安装](#安装)。
 
-
-`tools`目录下的`convert.php`用于将[pinyin](https://github.com/overtrue/pinyin)中的词库转换为`phrase.db`。
 
 ## 感谢
 

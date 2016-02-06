@@ -11,7 +11,9 @@ for(var p in dict) {
     }
 }
 
- fs.writeFile('./dict-zi.db', s, function(err){
+console.log(s)
+
+fs.writeFile('./dict-zi.db', s, function(err){
         if(err) throw err;
         console.log('has finished');
     });
