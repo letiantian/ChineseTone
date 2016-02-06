@@ -70,6 +70,7 @@ class PinyinResource(object):
             if '=' not in line:
                 continue
             hanzi, pinyins  = line.split('=')
+            pinyins = pinyins.lower()
             resource[hanzi] = pinyins.split(',')
         return resource
 
@@ -85,6 +86,7 @@ class PinyinResource(object):
                 if '=' not in line:
                     continue
                 word, pinyins  = line.split('=')
+                pinyins = pinyins.lower()
                 PinyinResource.PHRASE_MAX_LEN = max(PinyinResource.PHRASE_MAX_LEN, len(word))
                 resource[word] = pinyins.split(',')
 
