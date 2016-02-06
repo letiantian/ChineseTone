@@ -96,8 +96,13 @@ import jieba
 def cut(s):
     return jieba.cut(s, cut_all=False)
 
-print PinyinHelper.convertToPinyinFromSentence('我来到北京清华大学', pinyinFormat=PinyinFormat.WITHOUT_TONE, segment=cut)
-# 输出：[u'wo', u'lai', u'dao', u'bei', u'jing', u'qing', u'hua', u'da', u'xue']
+## 未指定分词函数
+print PinyinHelper.convertToPinyinFromSentence('提出了解决方案', pinyinFormat=PinyinFormat.WITHOUT_TONE)
+# 输出：[u'ti', u'chu', u'liao', u'jie', u'jue', u'fang', u'an']
+
+## 指定分词函数
+print PinyinHelper.convertToPinyinFromSentence('提出了解决方案', pinyinFormat=PinyinFormat.WITHOUT_TONE, segment=cut)
+# 输出：[u'ti', u'chu', u'le', u'jie', u'jue', u'fang', u'an']
 ```
 
 #### 获取某汉字的所有拼音
