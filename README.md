@@ -186,7 +186,7 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 
 `tools`目录下的`convert.php`用于将[pinyin](https://github.com/overtrue/pinyin)中的词库转换为`phrase.db`。
 
-## 相关项目
+## 感谢
 
 * jpinyin: https://github.com/stuxuhai/jpinyin
 * pinyin: https://github.com/hotoo/pinyin
