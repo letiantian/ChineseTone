@@ -6,9 +6,11 @@
 @github:   https://github.com/someus/
 """
 
-from __future__ import absolute_import
-
 __author__   = 'letian'
-__version__  = '0.1.0'
+__version__  = '0.1.1'
 
-from .chinesetone import PinyinFormat, PinyinResource, PinyinException, PinyinHelper, ChineseHelper
+from chinesetone import PinyinFormat
+from chinesetone import PinyinResource
+from chinesetone import PinyinException
+from chinesetone import PinyinHelper
+from chinesetone import ChineseHelper
