@@ -12,7 +12,7 @@ ChineseTone主要功能是将汉字转为拼音，兼容Python2、Python3，支�
 
 setup(
     name='ChineseTone',
-    version='0.1.1',
+    version='0.1.2',
     description='汉字转换为拼音，支持多音字',
     long_description=LONGDOC,
     author='Letian Sun',
