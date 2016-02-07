@@ -7,7 +7,6 @@
 """
 
 __author__   = 'letian'
-__version__  = '0.1.1'
 
 from chinesetone import PinyinFormat
 from chinesetone import PinyinResource

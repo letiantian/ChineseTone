@@ -3,13 +3,17 @@
 from distutils.core import setup
 
 LONGDOC = """
-Please go to https://github.com/someus/ChineseTone for more info.
+Please go to https://github.com/someus/ChineseTone for more info.  
+
+ChineseTone主要功能是将汉字转为拼音，兼容Python2、Python3，支持多音字。
+
+具体使用方法见 https://github.com/someus/ChineseTone 。
 """
 
 setup(
     name='ChineseTone',
     version='0.1.1',
-    description='将汉字转换为拼音',
+    description='汉字转换为拼音，支持多音字',
     long_description=LONGDOC,
     author='Letian Sun',
     author_email='sunlt1699@gmail.com',
