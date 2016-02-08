@@ -174,7 +174,7 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 ```
 
 ## 词库
-词库位于`ChineseTone/data`下，可以根据需要在添加内容。 
+词库位于`ChineseTone/data`下，可以根据需要添加条目。 
 
 词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)、[pinyin](https://github.com/hotoo/pinyin)。 
 
