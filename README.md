@@ -183,6 +183,8 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 * 如果有`build`目录，则删除；
 * [安装](#安装)。
 
+## 原理
+[如何实现拼音与汉字的互相转换](http://www.letiantian.me/2016-02-08-pinyin-hanzi/)
 
 ## 感谢
 
