@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 from __future__ import (print_function, unicode_literals)
 
 import os
@@ -53,7 +52,7 @@ def isChinese(s):
 
 data = {}
 
-files = ['./pinyin.db', './dict-zi.db']
+files = ['./pinyin.db', './dict-zi.db']  # 里面有null。。。
 
 for fpath in files:
     for line in open(fpath):
@@ -64,12 +63,13 @@ for fpath in files:
             pys = py.split(',')
             data.setdefault(hanzi, [])
             for _ in pys:
-                if _ not in data[hanzi]:
+                if _ not in data[hanzi] and _ != 'null':
                     data[hanzi].append(_)
 
 s = ''
 for hanzi in data:
-    s = s + hanzi + '=' + ','.join(data[hanzi]) + '\n'
+    if len(data[hanzi]) > 0:
+        s = s + hanzi + '=' + ','.join(data[hanzi]) + '\n'
 
 print(s)
 

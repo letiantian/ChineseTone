@@ -1,7 +1,6 @@
 # ChineseTone （汉字转拼音）
 
-ChineseTone是[jpinyin](https://github.com/stuxuhai/jpinyin)的Python实现（略有改动），主要功能是将汉字转为拼音，兼容Python2、Python3，支持多音字。
-
+ChineseTone是基于Python实现的拼音转汉字工具，实现了与[jpinyin](https://github.com/stuxuhai/jpinyin)类似的接口，兼容Python2、Python3，支持多音字。
 
 
 ## 安装
@@ -174,16 +173,19 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 ```
 
 ## 词库
+
 词库位于`ChineseTone/data`下，可以根据需要添加条目。 
 
-词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)、[pinyin](https://github.com/hotoo/pinyin)。 
+词库来自[jpinyin](https://github.com/stuxuhai/jpinyin)、[pinyin](https://github.com/overtrue/pinyin)、[pinyin](https://github.com/hotoo/pinyin)。 `pinyin.db`中的数据是合成自这三个词库。
 
 更新词库后需要重新安装：
 
 * 如果有`build`目录，则删除；
 * [安装](#安装)。
 
+
 ## 原理
+
 [如何实现拼音与汉字的互相转换](http://www.letiantian.me/2016-02-08-pinyin-hanzi/)
 
 ## 感谢
@@ -193,5 +195,12 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 * pypinyin: https://github.com/mozillazg/python-pinyin
 * pinyin: https://github.com/overtrue/pinyin
 
+## 补充 
+@2016-6-12: https://github.com/mozillazg/pinyin-data/ 整理了非常好的拼音数据。
 
+## 协议
+WTFPL  && 注明词库来源，即：
 
+* jpinyin: https://github.com/stuxuhai/jpinyin
+* pinyin: https://github.com/hotoo/pinyin
+* pinyin: https://github.com/overtrue/pinyin
