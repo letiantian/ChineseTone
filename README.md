@@ -104,6 +104,29 @@ print PinyinHelper.convertToPinyinFromSentence('提出了解决方案', pinyinFo
 # 输出：[u'ti', u'chu', u'le', u'jie', u'jue', u'fang', u'an']
 ```
 
+#### 添加自己的词库
+```python
+from ChineseTone import *
+
+print ','.join(PinyinHelper.convertToPinyinFromSentence('金馆长啊', pinyinFormat=PinyinFormat.WITHOUT_TONE))
+# 输出有错： jin,guan,chang,a
+
+# 添加词库
+PinyinHelper.addWordPinyin('金馆长', ['jin', 'guan', 'zhang'])  # 建议实际情况下拼音中加入声调
+print ','.join(PinyinHelper.convertToPinyinFromSentence('金馆长啊', pinyinFormat=PinyinFormat.WITHOUT_TONE))
+# 输出正确： jin,guan,zhang,a
+
+# 也可以自定义某个字符的读音
+print ','.join(PinyinHelper.convertToPinyinFromSentence('价值40$', pinyinFormat=PinyinFormat.WITHOUT_TONE))
+# 输出： jia,zhi,4,0,$
+# 自定义
+PinyinHelper.addCharPinyin('4', ['si'])   # 考虑多音字，所以用list
+PinyinHelper.addCharPinyin('0', ['ling'])
+PinyinHelper.addWordPinyin('$', ['mei', 'yuan'])  # 这个用法奇怪些
+print ','.join(PinyinHelper.convertToPinyinFromSentence('价值40$', pinyinFormat=PinyinFormat.WITHOUT_TONE))
+# 输出： jia,zhi,si,ling,mei,yuan
+```
+
 #### 获取某汉字的所有拼音
 ```python
 print PinyinHelper.convertToPinyinFromChar('了')
