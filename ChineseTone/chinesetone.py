@@ -285,6 +285,17 @@ class PinyinHelper(object):
             result += __middle(item, pinyinFormat, replace)
         return result
 
+    @staticmethod
+    def addWordPinyin(w, pinyinList):
+        ''' 添加自定义的单词的拼音，若已有则替换 '''
+        PinyinHelper.loadTable()
+        PinyinHelper.WORD_PINYIN_TABLE[w] = pinyinList
+
+    @staticmethod
+    def addCharPinyin(c, pinyinList):
+        ''' 添加自定义的字符的拼音，若已有则替换 '''
+        PinyinHelper.loadTable()
+        PinyinHelper.PINYIN_TABLE[c] = pinyinList
 
     @staticmethod
     def hasMultiPinyin(c):
