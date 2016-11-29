@@ -56,6 +56,22 @@ else:
 
     def is_text(v):
         return isinstance(v, unicode)
+    
+    
+    import codecs
+    import warnings
+    
+    
+    def open(file, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None, closefd=True, opener=None):
+        if newline is not None:
+            warnings.warn('newline is not supported in py2')
+        if not closefd:
+            warnings.warn('closefd is not supported in py2')
+        if opener is not None:
+            warnings.warn('opener is not supported in py2')
+        return codecs.open(filename=file, mode=mode, encoding=encoding,
+                           errors=errors, buffering=buffering)
 
 
 class PinyinResource(object):
@@ -65,7 +81,7 @@ class PinyinResource(object):
     @staticmethod
     def getPinyinResource():
         resource = {}
-        for line in open(os.path.join(CURRENT_DIR, 'data', 'pinyin.db')):
+        for line in open(os.path.join(CURRENT_DIR, 'data', 'pinyin.db'), encoding='utf8'):
             line = as_text(line.strip())
             if '=' not in line:
                 continue
@@ -81,7 +97,7 @@ class PinyinResource(object):
         wordFiles = [os.path.join(CURRENT_DIR, 'data', fname) for fname in wordFiles]
 
         for fpath in wordFiles:
-            for line in open(fpath):
+            for line in open(fpath, encoding='utf8'):
                 line = as_text(line.strip())
                 if '=' not in line:
                     continue
