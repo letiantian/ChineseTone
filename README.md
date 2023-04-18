@@ -209,7 +209,7 @@ print ChineseHelper.convertToSimplifiedChinese('hi，你好，我來到了北京
 
 ## 原理
 
-[如何实现拼音与汉字的互相转换](https://www.letianbiji.com/machine-learning/2016-02-08-pinyin-hanzi.html)
+[如何实现拼音与汉字的互相转换](https://www.letianbiji.com/article/101693.html)
 
 ## 感谢
 
